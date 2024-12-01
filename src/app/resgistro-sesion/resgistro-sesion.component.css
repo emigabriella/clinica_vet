@@ -1,0 +1,43 @@
+/* Estilos para la card en horizontal */
+.horizontal-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* Ajusta el ancho total de la card */
+  max-width: 800px; /* Puedes ajustar este valor según tus necesidades */
+  margin: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste de la imagen en la card */
+.card-img-left {
+  width: 50%; /* Ajusta este valor según el tamaño que necesites */
+  height: auto;
+  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+}
+
+/* Estilos del cuerpo de la card */
+.card-body {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  font-size: 1em;
+}
+

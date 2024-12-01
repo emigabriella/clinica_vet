@@ -1,0 +1,16 @@
+.image-container {
+  width: 100%;
+  height: 400px; /* Puedes ajustar esto según tus necesidades */
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+}
+
+
+
+
+
