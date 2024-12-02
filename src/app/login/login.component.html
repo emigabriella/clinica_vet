@@ -4,7 +4,7 @@
     <br><br><br>
     <h5 class="card-title">INICIAR SESION</h5>
     <br><br><br>
-    <form>
+    <form #miFormulario="ngForm" (ngSubmit)="login(miFormulario)">
       <div class="form-group">
         <label for="email">Correo Electronico</label>
         <input type="text" id="email" required  name="email" class="form-control">

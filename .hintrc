@@ -4,11 +4,15 @@
   ],
   "hints": {
     "no-inline-styles": "off",
-    "axe/text-alternatives": [
+    "axe/text-alternatives": "off",
+    "compat-api/html": [
       "default",
       {
-        "image-alt": "off"
+        "ignore": [
+          "iframe[loading]"
+        ]
       }
-    ]
+    ],
+    "disown-opener": "off"
   }
 }

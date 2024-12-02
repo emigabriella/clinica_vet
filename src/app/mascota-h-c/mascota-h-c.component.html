@@ -4,12 +4,47 @@
 <div class="container">
   <div class="row">
       <div class="col">
-          <div>
-              <a [routerLink]="['actualizar', indice]">
-                  {{indice+1}} {{mascotaLista.n_dueno}} {{mascotaLista.direccion}} {{mascotaLista.numero}}{{mascotaLista.correo}}
-                  {{mascotaLista.n_mascota}}{{mascotaLista.tipo_mascota}}{{mascotaLista.edad}}{{mascotaLista.raza}}
-              </a>
-          </div>
-      </div>
-  </div>
+  <table class="table table-responsive table-striped">
+    <thead>
+      <tr>
+        <th colspan="5" class="table-info">Datos del Dueño</th>
+        <th colspan="5" class="table-primary">Datos de la Mascota</th>
+      </tr>
+    </thead>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre del Dueño</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>Nombre de mascota</th>
+        <th>Tipo de mascota</th>
+        <th>Edad</th>
+        <th>Raza</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ indice + 1 }}</td>
+        <td>{{ mascotaLista.n_dueno }}</td>
+        <td>{{ mascotaLista.direccion }}</td>
+        <td>{{ mascotaLista.numero }}</td>
+        <td>{{ mascotaLista.correo }}</td>
+        <td>{{ mascotaLista.n_mascota }}</td>
+        <td>{{ mascotaLista.tipo_mascota }}</td>
+        <td>{{ mascotaLista.edad }}</td>
+        <td>{{ mascotaLista.raza }}</td>
+        <td>
+          <a class="btn btn-outline-warning" [routerLink]="['actualizar', indice]"><i class="fa-regular fa-pen-to-square"></i>Actualizar</a>
+          <a class="btn btn-outline-danger ml-1" [routerLink]="['eliminar', indice]"><i class="fa-solid fa-trash"></i>Eliminar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+</div>
+</div>
+
+

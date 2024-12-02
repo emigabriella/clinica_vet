@@ -9,3 +9,133 @@
   height: 100%;
   object-fit: contain; /* Ajusta la imagen dentro del contenedor */
 }
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  background-color: #007BFF;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+.contacto, .info-contacto, .ubicacion {
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.mapa iframe {
+  border-radius: 10px;
+}
+
+.info-contacto p {
+  margin: 5px 0;
+}
+
+.info-contacto a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.info-contacto a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.info-contacto a {
+  color: #007BFF;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.info-contacto a i {
+  margin-right: 5px;
+}
+
+.info-contacto a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.info-contacto i {
+  font-size: 1.2em; /* Ajusta el tamaño de los íconos */
+}

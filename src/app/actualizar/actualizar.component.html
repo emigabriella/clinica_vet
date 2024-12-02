@@ -1,53 +1,88 @@
 <div class="image-container">
   <img src="assets/Actualizar Datos_20241118_113500_0000.png" >
 </div>
-<div class="container">
-  <h4 class="card-title">Datos del dueño</h4>
-  <form class="form-group row" (ngSubmit)="actualizar_mascota()">
-    <div class="form-group col-md-3">
-        <label for="n_dueno">Nombre del dueño:</label>
-        <input type="text" name="n_dueno" id="n_dueno" placeholder="Digite nombre del dueño" class="form-control" [(ngModel)]="cuadro_n_dueno">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="direccion">Direccion:</label>
-        <input type="text" name="direccion" id="direccion" placeholder="Digite direccion" class="form-control" [(ngModel)]="cuadro_direccion">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="numero">Numero de Contacto:</label>
-        <input type="number" name="numero" id="numero" placeholder="Digite numero de contacto" class="form-control" [(ngModel)]="cuadro_numero">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="correo">correo:</label>
-        <input type="text" name="correo" id="correo" placeholder="Digite correo" class="form-control" [(ngModel)]="cuadro_correo">
-      </div>
-
-    <h4 class="card-title">Datos de la mascota:</h4>
-    <div class="form-group row">
-      <div class="form-group col-md-3">
-        <label for="n_mascotas">Nombre de mascota</label>
-        <input type="text" name="n_mascotas" id="n_mascotas" placeholder="Digite nombre de mascota" class="form-control" [(ngModel)]="cuadro_n_mascota">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="tipo_mascota">Tipo de mascota:</label>
-        <input type="text" name="tipo_mascota" id="tipo_mascota" placeholder="Digite que tipo de mascota" class="form-control" [(ngModel)]="cuadro_tipo_mascota">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="edad">Edad (meses):</label>
-        <input type="number" name="edad" id="edad" placeholder="Digite edad" class="form-control" [(ngModel)]="cuadro_edad">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="raza">Raza:</label>
-        <input type="text" name="raza" id="raza" placeholder="Digite Raza" class="form-control" [(ngModel)]="cuadro_raza">
-      </div>
-    </div>
-
-    <div class="form-group col-md-12">
-      <button type="submit" class="btn btn-warning" >Actualizar
-    </button>
-  </div>
-
-
-
-  </form>
-
+  <div class="container">
+    <h4 class="card-title">Datos del dueño</h4>
+      <form (ngSubmit)="actualizar_mascota()">
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="n_dueno">Nombre del dueño:</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa-solid fa-user"></i></div>
+              </div>
+            <input type="text" name="n_dueno" id="n_dueno" placeholder="Digite nombre del dueño" class="form-control" [(ngModel)]="cuadro_n_dueno" >
+          </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="direccion">Direccion:</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa-solid fa-location-dot"></i></div>
+              </div>
+            <input type="text" name="direccion" id="direccion" placeholder="Digite direccion" class="form-control" [(ngModel)]="cuadro_direccion">
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="numero">Numero de Contacto:</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa-solid fa-phone"></i></div>
+              </div>
+            <input type="number" name="numero" id="numero" placeholder="Digite numero de contacto" class="form-control" [(ngModel)]="cuadro_numero">
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="correo">correo:</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa-solid fa-at"></i></div>
+              </div>
+            <input type="text" name="correo" id="correo" placeholder="Digite correo" class="form-control" [(ngModel)]="cuadro_correo">
+            </div>
+          </div>
+        </div>
+          <h4 class="card-title">Datos de la mascota:</h4>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="n_mascotas">Nombre de mascota</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa-solid fa-paw"></i></div>
+              </div>
+            <input type="text" name="n_mascotas" id="n_mascotas" placeholder="Digite nombre de mascota" class="form-control" [(ngModel)]="cuadro_n_mascota">
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="tipo_mascota">Tipo de mascota:</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa-solid fa-paw"></i></div>
+              </div>
+            <input type="text" name="tipo_mascota" id="tipo_mascota" placeholder="Digite que tipo de mascota" class="form-control" [(ngModel)]="cuadro_tipo_mascota">
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="edad">Edad (meses):</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa-solid fa-cake-candles"></i></div>
+              </div>
+            <input type="number" name="edad" id="edad" placeholder="Digite edad" class="form-control" [(ngModel)]="cuadro_edad">
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="raza">Raza:</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa-solid fa-paw"></i></div>
+              </div>
+            <input type="text" name="raza" id="raza" placeholder="Digite Raza" class="form-control" [(ngModel)]="cuadro_raza">
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <button type="submit" class="btn btn-warning"><i class="fa-solid fa-floppy-disk">Actualizar</i></button>
+        </div>
+      </form>
 

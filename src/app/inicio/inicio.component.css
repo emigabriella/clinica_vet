@@ -10,6 +10,174 @@
   object-fit: contain; /* Ajusta la imagen dentro del contenedor */
 }
 
+/* Reset básico */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 10px;
+}
+
+/* Estilo del encabezado */
+header {
+  text-align: center;
+  background: #007BFF;
+  color: white;
+  padding: 20px 0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+/* Sección de videos */
+.videos {
+  margin-bottom: 20px;
+}
+
+.video-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.video {
+  width: 45%;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.video iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
+
+.video p {
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+/* Sección de datos curiosos */
+.datos-curiosos {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.datos-curiosos h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.datos-curiosos ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.datos-curiosos li {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f0f8ff;
+  border-left: 5px solid #007BFF;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+/* Pie de página */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background: #007BFF;
+  color: white;
+  border-radius: 10px;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 20px;
+}
+
+.contenedor {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%; /* Hace la imagen circular */
+  margin-right: 15px; /* Espacio entre la imagen y el texto */
+  object-fit: cover; /* Ajusta la imagen al tamaño del contenedor circular */
+  border: 2px solid #007BFF; /* Agrega un borde alrededor de la imagen */
+}
+
+.item p {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.intro {
+  background-color: #f0f8ff; /* Color suave y relajante */
+  border-left: 5px solid #007BFF; /* Línea decorativa */
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  margin: 20px auto; /* Centra el contenedor horizontalmente */
+  text-align: center; /* Centra el texto horizontalmente */
+  max-width: 800px; /* Limita el ancho del div para una mejor legibilidad */
+}
+
+.intro h2 {
+  font-size: 2em;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.intro strong {
+  color: #0056b3;
+}
+
+
 
 
 

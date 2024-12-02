@@ -2,18 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { mascota } from '../mascota.models';
-import { mascotasService } from '../mascotas.service';
+import { mascotasService } from '../services/mascotas.service';
+import { MascotaHCComponent } from "../mascota-h-c/mascota-h-c.component";
+import { CommonModule } from '@angular/common';
+import { ServicioMascotaService } from '../services/servicio-mascota.service';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [FormsModule],
-  providers: [Router],
+  imports: [FormsModule, MascotaHCComponent, CommonModule],
+  providers: [ServicioMascotaService, LoginService],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
 })
 export class RegistroComponent implements OnInit{
-  volverDatos(){
+  volverHome(){
     this.router.navigate(['']);
   }
 
@@ -33,7 +37,14 @@ export class RegistroComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.mascotas = this.mascotasService.mascotas;
+    /*this.mascotas = this.mascotasService.mascotas;*/
+    this.mascotasService.obtener_mascotas().subscribe(
+      misMascotas =>{
+        console.log(misMascotas);
+        this.mascotas = Object.values(misMascotas);
+        this.mascotasService.set_mascotas(this.mascotas);
+      }
+    )
   }
 
   guardar_mascota(){

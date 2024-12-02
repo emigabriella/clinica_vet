@@ -1,21 +1,25 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { mascota } from '../mascota.models';
-import { ServicioMascotaService } from '../services/servicio-mascota.service';
-import { MascotaHCComponent } from '../mascota-h-c/mascota-h-c.component';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { mascotasService } from '../services/mascotas.service';
+import { MascotaHCComponent } from '../mascota-h-c/mascota-h-c.component';
+import { ServicioMascotaService } from '../services/servicio-mascota.service';
 import { LoginService } from '../login/login.service';
+import { mascotasService } from '../services/mascotas.service';
 
 @Component({
-  selector: 'app-datos-p-c',
+  selector: 'app-registro-datos',
   standalone: true,
   imports: [CommonModule, FormsModule, MascotaHCComponent],
   providers: [ServicioMascotaService, LoginService],
-  templateUrl: './datos-p-c.component.html',
-  styleUrl: './datos-p-c.component.css'
+  templateUrl: './registro-datos.component.html',
+  styleUrl: './registro-datos.component.css'
 })
-export class DatosPCComponent implements OnInit{
+export class RegistroDatosComponent implements OnInit{
+  volverHome(){
+    this.router.navigate(['']);
+  }
 
   mascotas!: mascota[];
 
@@ -28,7 +32,7 @@ export class DatosPCComponent implements OnInit{
   cuadro_edad : number = 0;
   cuadro_raza : string = "";
 
-  constructor(private miServicio: ServicioMascotaService, private mascotasService: mascotasService){
+  constructor(private router: Router, private mascotasService: mascotasService){
     //this.mascotas = this.mascotasService.mascotas;
   }
 
@@ -53,6 +57,8 @@ export class DatosPCComponent implements OnInit{
 
     //this.mascotas.push(mimascota);
     this.mascotasService.agregar_mascota(miMascota);
+
+    this.router.navigate(['']);
 
     this.cuadro_n_dueno="";
     this.cuadro_direccion="";

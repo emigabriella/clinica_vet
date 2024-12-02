@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { mascota } from "./mascota.models";
+import { mascota } from "../mascota.models";
 import { ServicioMascotaService } from "./servicio-mascota.service";
 import { DataServices } from "./data.service";
 
@@ -9,9 +9,11 @@ import { DataServices } from "./data.service";
   providedIn: 'root'
 })
 export class mascotasService{
-  mascotas: mascota []=[
+  /*mascotas: mascota []=[
     new mascota('Rosa','Florencia',12345678,'rosa@gmail.com','hachy','perro',5,'husky')
-  ];
+  ];*/
+
+  mascotas: mascota []=[];
 
   constructor(private servicioMensaje: ServicioMascotaService, private dataService: DataServices){}
 
@@ -40,17 +42,17 @@ export class mascotasService{
       this.dataService.actualizar_posicion(indice, mascota);
     }
 
-    eliminar_empleado(indice: number){
+    eliminar_mascota(indice: number){
       this.mascotas.splice(indice, 1);
       this.dataService.eliminar_posicion(indice);
       this.dataService.guardar_arreglo(this.mascotas);
     }
 
-    obtener_empleados(){
+    obtener_mascotas(){
       return this.dataService.cargar_arreglo();//observable -> permite operaciones asincronas en 2do plano, actualizar sin hacer select
     }
 
-    set_empleados(mismascotas: mascota[]){
+    set_mascotas(mismascotas: mascota[]){
       this.mascotas = mismascotas;
     }
 }
