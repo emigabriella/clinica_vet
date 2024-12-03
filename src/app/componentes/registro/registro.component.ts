@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { mascota } from '../mascota.models';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MascotaHCComponent } from '../mascota-h-c/mascota-h-c.component';
-import { ServicioMascotaService } from '../services/servicio-mascota.service';
+import { Router } from '@angular/router';
+import { mascota } from '../../mascota.models';
+import { mascotasService } from '../../services/mascotas.service';
+import { MascotaHCComponent } from "../mascota-h-c/mascota-h-c.component";
+import { CommonModule } from '@angular/common';
+import { ServicioMascotaService } from '../../services/servicio-mascota.service';
 import { LoginService } from '../login/login.service';
-import { mascotasService } from '../services/mascotas.service';
 
 @Component({
-  selector: 'app-registro-datos',
+  selector: 'app-registro',
   standalone: true,
-  imports: [CommonModule, FormsModule, MascotaHCComponent],
+  imports: [FormsModule, MascotaHCComponent, CommonModule],
   providers: [ServicioMascotaService, LoginService],
-  templateUrl: './registro-datos.component.html',
-  styleUrl: './registro-datos.component.css'
+  templateUrl: './registro.component.html',
+  styleUrl: './registro.component.css'
 })
-export class RegistroDatosComponent implements OnInit{
-  volverHome(){
-    this.router.navigate(['']);
+export class RegistroComponent implements OnInit{
+  volverDatos(){
+    this.router.navigate(['registro-datos']);
   }
 
   mascotas!: mascota[];
@@ -58,7 +58,7 @@ export class RegistroDatosComponent implements OnInit{
     //this.mascotas.push(mimascota);
     this.mascotasService.agregar_mascota(miMascota);
 
-    this.router.navigate(['']);
+    this.router.navigate(['registro-datos']);
 
     this.cuadro_n_dueno="";
     this.cuadro_direccion="";

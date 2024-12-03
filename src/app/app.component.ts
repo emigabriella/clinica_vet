@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginService } from './login/login.service';
+import { LoginService } from './componentes/login/login.service';
 import { CommonModule } from '@angular/common';
 import firebase from 'firebase/compat/app';
 

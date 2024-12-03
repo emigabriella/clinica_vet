@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { mascota } from "../mascota.models";
-import { LoginService } from "../login/login.service";
+import { LoginService } from "../componentes/login/login.service";
 @Injectable({
   providedIn:'root'
 })
@@ -24,7 +24,7 @@ export class DataServices{
         let url = "https://clinic-vet-8a11c-default-rtdb.firebaseio.com/mdatos/" + indice + ".json";
 
         this.httpClient.put(url, mascota).subscribe(
-            response =>console.log("Se ha actualizado el empleado " + response),
+            response =>console.log("Se ha actualizado la mascota " + response),
             error =>console.log("Error: "+ error)
         );
     }
@@ -33,7 +33,7 @@ export class DataServices{
         let url = "https://clinic-vet-8a11c-default-rtdb.firebaseio.com/mdatos/" + indice + ".json";
 
         this.httpClient.delete(url).subscribe(
-            response => console.log("Se ha eliminado el empleado " + response),
+            response => console.log("Se ha eliminado la mascota " + response),
             error => console.log("Error: " + error)
         );
     }

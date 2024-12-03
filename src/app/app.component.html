@@ -32,11 +32,11 @@
         <a class="nav-link" href="/registro-datos">Registro | Datos</a>
       </li>
 
-      <li class="nav-item" style="margin-left: 500px;" *ngIf="!estaLogueado()">
+      <li class="nav-item" style="margin-left: 800px;" *ngIf="!estaLogueado()">
         <a class="nav-link" href="/login">Login</a>
       </li>
       <li class="nav-item" style="margin-left: 800px;" *ngIf="estaLogueado()">
-        <a class="nav-link" (click)="logout()">Logout</a>
+        <a class="nav-link" (click)="logout()"><i class="fa-solid fa-right-to-bracket"></i>  Cerrar Sesion</a>
       </li>
     </ul>
   </div>

@@ -3,7 +3,7 @@
 </div>
     <div class="container">
       <h4 class="card-title">Datos del dueño</h4>
-        <form (ngSubmit)="guardar_mascota()">
+        <form>
           <div class="form-row">
             <div class="form-group col-md-3">
               <label for="n_dueno">Nombre del dueño:</label>
@@ -82,8 +82,8 @@
             </div>
           </div>
           <div class="form-group col-md-12">
-            <button type="submit" class="btn btn-outline-primary btn-block"><i class="fa-solid fa-floppy-disk">Guardar</i></button>
+            <button type="submit" class="btn btn-outline-primary btn-block" (click)="guardar_mascota()"><i class="fa-solid fa-floppy-disk">Guardar</i></button>
           </div>
         </form>
 
-<app-mascota-h-c *ngFor="let mascota of mascotas; let i = index" [mascotaLista]="mascota" [indice]="i"></app-mascota-h-c>
+        <app-mascota-h-c *ngFor="let mascota of mascotas; let i = index" [mascotaLista]="mascota" [indice]="i"></app-mascota-h-c>

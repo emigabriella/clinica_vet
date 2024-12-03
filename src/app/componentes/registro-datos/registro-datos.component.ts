@@ -1,21 +1,22 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { mascota } from '../mascota.models';
-import { ServicioMascotaService } from '../services/servicio-mascota.service';
-import { MascotaHCComponent } from '../mascota-h-c/mascota-h-c.component';
+import { Router } from '@angular/router';
+import { mascota } from '../../mascota.models';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { mascotasService } from '../services/mascotas.service';
+import { MascotaHCComponent } from '../mascota-h-c/mascota-h-c.component';
+import { ServicioMascotaService } from '../../services/servicio-mascota.service';
 import { LoginService } from '../login/login.service';
+import { mascotasService } from '../../services/mascotas.service';
 
 @Component({
-  selector: 'app-datos-p-c',
+  selector: 'app-registro-datos',
   standalone: true,
   imports: [CommonModule, FormsModule, MascotaHCComponent],
   providers: [ServicioMascotaService, LoginService],
-  templateUrl: './datos-p-c.component.html',
-  styleUrl: './datos-p-c.component.css'
+  templateUrl: './registro-datos.component.html',
+  styleUrl: './registro-datos.component.css'
 })
-export class DatosPCComponent implements OnInit{
+export class RegistroDatosComponent implements OnInit{
 
   mascotas!: mascota[];
 
@@ -53,6 +54,8 @@ export class DatosPCComponent implements OnInit{
 
     //this.mascotas.push(mimascota);
     this.mascotasService.agregar_mascota(miMascota);
+
+
 
     this.cuadro_n_dueno="";
     this.cuadro_direccion="";

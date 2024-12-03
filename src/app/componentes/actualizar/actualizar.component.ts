@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { mascota } from '../mascota.models';
+import { mascota } from '../../mascota.models';
 import { ActivatedRoute, Router } from '@angular/router';
-import { mascotasService } from '../services/mascotas.service';
+import { mascotasService } from '../../services/mascotas.service';
+
 
 @Component({
   selector: 'app-actualizar',
@@ -13,8 +14,8 @@ import { mascotasService } from '../services/mascotas.service';
   styleUrl: './actualizar.component.css'
 })
 export class ActualizarComponent implements OnInit{
-  volverHome(){
-    this.router.navigate(['']);
+  volverDatos(){
+    this.router.navigate(['registro-datos']);
   }
 
   mascotas!: mascota[];
@@ -36,7 +37,7 @@ export class ActualizarComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
+    this.accion =parseInt(this.route.snapshot.queryParams['accion'])
     this.indice = this.route.snapshot.params['id'];
     let mascota: mascota = this.mascotasService.encontrar_mascota(this.indice);
     this.cuadro_n_dueno=mascota.n_dueno;
@@ -58,7 +59,8 @@ export class ActualizarComponent implements OnInit{
     this.mascotasService.actualizar_mascota(this.indice, miMascota);
 
 
-      this.router.navigate(['']);
+      this.router.navigate(['registro-datos']);
+
 }
 
   }

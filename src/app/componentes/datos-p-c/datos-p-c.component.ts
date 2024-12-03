@@ -1,25 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { mascota } from '../mascota.models';
-import { mascotasService } from '../services/mascotas.service';
-import { MascotaHCComponent } from "../mascota-h-c/mascota-h-c.component";
 import { CommonModule } from '@angular/common';
-import { ServicioMascotaService } from '../services/servicio-mascota.service';
+import { Component, OnInit } from '@angular/core';
+import { mascota } from '../../mascota.models';
+import { ServicioMascotaService } from '../../services/servicio-mascota.service';
+import { MascotaHCComponent } from '../mascota-h-c/mascota-h-c.component';
+import { FormsModule } from '@angular/forms';
+import { mascotasService } from '../../services/mascotas.service';
 import { LoginService } from '../login/login.service';
 
 @Component({
-  selector: 'app-registro',
+  selector: 'app-datos-p-c',
   standalone: true,
-  imports: [FormsModule, MascotaHCComponent, CommonModule],
+  imports: [CommonModule, FormsModule, MascotaHCComponent],
   providers: [ServicioMascotaService, LoginService],
-  templateUrl: './registro.component.html',
-  styleUrl: './registro.component.css'
+  templateUrl: './datos-p-c.component.html',
+  styleUrl: './datos-p-c.component.css'
 })
-export class RegistroComponent implements OnInit{
-  volverHome(){
-    this.router.navigate(['']);
-  }
+export class DatosPCComponent implements OnInit{
 
   mascotas!: mascota[];
 
@@ -32,7 +28,7 @@ export class RegistroComponent implements OnInit{
   cuadro_edad : number = 0;
   cuadro_raza : string = "";
 
-  constructor(private router: Router, private mascotasService: mascotasService){
+  constructor(private miServicio: ServicioMascotaService, private mascotasService: mascotasService){
     //this.mascotas = this.mascotasService.mascotas;
   }
 
@@ -57,8 +53,6 @@ export class RegistroComponent implements OnInit{
 
     //this.mascotas.push(mimascota);
     this.mascotasService.agregar_mascota(miMascota);
-
-    this.router.navigate(['']);
 
     this.cuadro_n_dueno="";
     this.cuadro_direccion="";

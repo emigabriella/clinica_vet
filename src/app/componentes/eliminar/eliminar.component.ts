@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ServicioMascotaService } from '../services/servicio-mascota.service';
-import { mascota } from '../mascota.models';
+import { ServicioMascotaService } from '../../services/servicio-mascota.service';
+import { mascota } from '../../mascota.models';
 import { ActivatedRoute, Router } from '@angular/router';
-import { mascotasService } from '../services/mascotas.service';
+import { mascotasService } from '../../services/mascotas.service';
 
 @Component({
   selector: 'app-eliminar',
@@ -14,11 +14,11 @@ import { mascotasService } from '../services/mascotas.service';
   styleUrl: './eliminar.component.css'
 })
 export class EliminarComponent {
-  volverHome(){
-    this.router.navigate(['']);
-  }
+  [x: string]: any;
 
-  titulo = 'Registro de Mascotas';
+  volverDatos(){
+    this.router.navigate(['registro-datos']);
+  }
 
   mascotas!: mascota[];
 
@@ -46,7 +46,7 @@ export class EliminarComponent {
 
   eliminar_mascota(){
     this.mascotasService.eliminar_mascota(this.indice);
-    this.router.navigate(['']);
+    this.router.navigate(['registro-datos']);
   }
 }
 
