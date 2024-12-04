@@ -16,8 +16,8 @@ export class DataServices{
     }
 
     cargar_arreglo(){
-        const token = this.loginService.getIdToken();
-        return this.httpClient.get('https://clinic-vet-8a11c-default-rtdb.firebaseio.com/mdatos.json?auth=' + token);
+        const tok = this.loginService.getIdToken();
+        return this.httpClient.get('https://clinic-vet-8a11c-default-rtdb.firebaseio.com/mdatos.json?auth=' + tok);
     }
 
     actualizar_posicion(indice: number, mascota: mascota){

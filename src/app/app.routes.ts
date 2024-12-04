@@ -7,7 +7,6 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { DatosPCComponent } from './componentes/datos-p-c/datos-p-c.component';
 import { EliminarComponent } from './componentes/eliminar/eliminar.component';
 import { ActualizarComponent } from './componentes/actualizar/actualizar.component';
-import { ResgistroSesionComponent } from './componentes/resgistro-sesion/resgistro-sesion.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { ServiciosVComponent } from './componentes/servicios-v/servicios-v.component';
 import { RegistroDatosComponent } from './componentes/registro-datos/registro-datos.component';
@@ -26,6 +25,5 @@ export const routes: Routes = [
   {path:"actualizar/:id", component: ActualizarComponent,canActivate: [LoginGuardian]},
   {path:"eliminar/:id", component: EliminarComponent,canActivate: [LoginGuardian]},
   {path:"login", component: LoginComponent},
-  {path:"registro_sesion", component: ResgistroSesionComponent},
   {path: "**", component: ErrorComponent}
 ];

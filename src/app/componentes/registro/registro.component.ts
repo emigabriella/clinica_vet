@@ -7,11 +7,12 @@ import { MascotaHCComponent } from "../mascota-h-c/mascota-h-c.component";
 import { CommonModule } from '@angular/common';
 import { ServicioMascotaService } from '../../services/servicio-mascota.service';
 import { LoginService } from '../login/login.service';
+import { PortadadComponent } from '../portadad/portadad.component';
 
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [FormsModule, MascotaHCComponent, CommonModule],
+  imports: [FormsModule, CommonModule],
   providers: [ServicioMascotaService, LoginService],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
@@ -69,4 +70,5 @@ export class RegistroComponent implements OnInit{
     this.cuadro_edad=0;
     this.cuadro_raza="";
   }
+
 }

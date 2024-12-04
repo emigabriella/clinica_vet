@@ -11,7 +11,7 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fa-solid fa-user"></i></div>
                 </div>
-              <input type="text" name="n_dueno" id="n_dueno" placeholder="Digite nombre del dueño" class="form-control" [(ngModel)]="cuadro_n_dueno" >
+              <input type="text" name="n_dueno" id="n_dueno" placeholder="Digite nombre del dueño" class="form-control" [(ngModel)]="cuadro_n_dueno" required>
             </div>
             </div>
             <div class="form-group col-md-3">
@@ -20,7 +20,7 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fa-solid fa-location-dot"></i></div>
                 </div>
-              <input type="text" name="direccion" id="direccion" placeholder="Digite direccion" class="form-control" [(ngModel)]="cuadro_direccion">
+              <input type="text" name="direccion" id="direccion" placeholder="Digite direccion" class="form-control" [(ngModel)]="cuadro_direccion" required>
               </div>
             </div>
             <div class="form-group col-md-3">
@@ -29,7 +29,7 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fa-solid fa-phone"></i></div>
                 </div>
-              <input type="number" name="numero" id="numero" placeholder="Digite numero de contacto" class="form-control" [(ngModel)]="cuadro_numero">
+              <input type="number" name="numero" id="numero" placeholder="Digite numero de contacto" class="form-control" [(ngModel)]="cuadro_numero" required>
               </div>
             </div>
             <div class="form-group col-md-3">
@@ -38,7 +38,7 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fa-solid fa-at"></i></div>
                 </div>
-              <input type="text" name="correo" id="correo" placeholder="Digite correo" class="form-control" [(ngModel)]="cuadro_correo">
+              <input type="text" name="correo" id="correo" placeholder="Digite correo" class="form-control" [(ngModel)]="cuadro_correo" required>
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fa-solid fa-paw"></i></div>
                 </div>
-              <input type="text" name="n_mascotas" id="n_mascotas" placeholder="Digite nombre de mascota" class="form-control" [(ngModel)]="cuadro_n_mascota">
+              <input type="text" name="n_mascotas" id="n_mascotas" placeholder="Digite nombre de mascota" class="form-control" [(ngModel)]="cuadro_n_mascota" required>
               </div>
             </div>
             <div class="form-group col-md-3">
@@ -59,7 +59,7 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fa-solid fa-paw"></i></div>
                 </div>
-              <input type="text" name="tipo_mascota" id="tipo_mascota" placeholder="Digite que tipo de mascota" class="form-control" [(ngModel)]="cuadro_tipo_mascota">
+              <input type="text" name="tipo_mascota" id="tipo_mascota" placeholder="Digite que tipo de mascota" class="form-control" [(ngModel)]="cuadro_tipo_mascota" required>
               </div>
             </div>
             <div class="form-group col-md-3">
@@ -68,7 +68,7 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fa-solid fa-cake-candles"></i></div>
                 </div>
-              <input type="number" name="edad" id="edad" placeholder="Digite edad" class="form-control" [(ngModel)]="cuadro_edad">
+              <input type="number" name="edad" id="edad" placeholder="Digite edad" class="form-control" [(ngModel)]="cuadro_edad" required>
               </div>
             </div>
             <div class="form-group col-md-3">
@@ -77,13 +77,24 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fa-solid fa-paw"></i></div>
                 </div>
-              <input type="text" name="raza" id="raza" placeholder="Digite Raza" class="form-control" [(ngModel)]="cuadro_raza">
+              <input type="text" name="raza" id="raza" placeholder="Digite Raza" class="form-control" [(ngModel)]="cuadro_raza" required>
               </div>
             </div>
           </div>
           <div class="form-group col-md-12">
-            <button type="submit" class="btn btn-outline-primary btn-block" (click)="guardar_mascota()"><i class="fa-solid fa-floppy-disk">Guardar</i></button>
+            <button type="submit" class="btn btn-outline-primary btn-block" (click)="guardar_mascota()" ><i class="fa-solid fa-floppy-disk">Guardar</i></button>
           </div>
         </form>
+<app-portadad></app-portadad><br>
+<div class="container">
+  <!-- Usar el sistema de grid de Bootstrap para organizar las cards -->
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Iterar sobre cada mascota en el array 'mascotas' -->
+    <app-mascota-h-c
+      *ngFor="let mascota of mascotas; let i = index"
+      [mascotaLista]="mascota"
+      [indice]="i">
+    </app-mascota-h-c>
+  </div>
+</div>
 
-        <app-mascota-h-c *ngFor="let mascota of mascotas; let i = index" [mascotaLista]="mascota" [indice]="i"></app-mascota-h-c>

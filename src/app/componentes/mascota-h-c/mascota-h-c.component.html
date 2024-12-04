@@ -1,50 +1,21 @@
-<div class="image-container">
-  <img src="assets/Datos_20241118_113746_0000.png" >
+<div class="col">
+  <div class="card h-100">
+    <div class="card-body">
+      <h5 class="card-title">{{ indice + 1 }}</h5>
+      <p class="card-text">
+        <strong>Datos del dueño</strong><br>
+        <strong>Dueño:</strong> {{ mascotaLista.n_dueno }}<br>
+        <strong>Dirección:</strong> {{ mascotaLista.direccion }}<br>
+        <strong>Teléfono:</strong> {{ mascotaLista.numero }}<br>
+        <strong>Correo:</strong> {{ mascotaLista.correo }}<br><br>
+        <strong>Datos de la mascota</strong><br>
+        <strong>Nombre de la mascota:</strong> {{ mascotaLista.n_mascota }} <br>
+        <strong>Tipo de Mascota:</strong> {{ mascotaLista.tipo_mascota }}<br>
+        <strong>Edad:</strong> {{ mascotaLista.edad }} meses<br>
+        <strong>Raza:</strong> {{ mascotaLista.raza }}
+      </p>
+      <a class="btn btn-outline-warning" [routerLink]="['/actualizar', indice]"><i class="fa-regular fa-pen-to-square"></i>Actualizar</a>
+      <a class="btn btn-outline-danger ml-1" [routerLink]="['/eliminar', indice]"><i class="fa-solid fa-trash"></i>Eliminar</a>
+    </div>
+  </div>
 </div>
-<div class="container">
-  <div class="row">
-      <div class="col">
-  <table class="table table-responsive table-striped">
-    <thead>
-      <tr>
-        <th colspan="5" class="table-info">Datos del Dueño</th>
-        <th colspan="5" class="table-primary">Datos de la Mascota</th>
-      </tr>
-    </thead>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Nombre del Dueño</th>
-        <th>Direccion</th>
-        <th>Telefono</th>
-        <th>Correo</th>
-        <th>Nombre de mascota</th>
-        <th>Tipo de mascota</th>
-        <th>Edad</th>
-        <th>Raza</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ indice + 1 }}</td>
-        <td>{{ mascotaLista.n_dueno }}</td>
-        <td>{{ mascotaLista.direccion }}</td>
-        <td>{{ mascotaLista.numero }}</td>
-        <td>{{ mascotaLista.correo }}</td>
-        <td>{{ mascotaLista.n_mascota }}</td>
-        <td>{{ mascotaLista.tipo_mascota }}</td>
-        <td>{{ mascotaLista.edad }}</td>
-        <td>{{ mascotaLista.raza }}</td>
-        <td>
-          <a class="btn btn-outline-warning" [routerLink]="['/actualizar', indice]"><i class="fa-regular fa-pen-to-square"></i>Actualizar</a>
-          <a class="btn btn-outline-danger ml-1" [routerLink]="['/eliminar', indice]"><i class="fa-solid fa-trash"></i>Eliminar</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
-</div>
-
-

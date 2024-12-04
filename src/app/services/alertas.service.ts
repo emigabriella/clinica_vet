@@ -40,26 +40,5 @@ export class AlertasService {
     }).then((result) => result.isConfirmed);
   }
 
-  mostrarConfirmacion1(titulo: string, mensaje: string): Promise<boolean> {
-    return Swal.fire({
-      title: titulo,
-      text: mensaje,
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí, actualizar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => result.isConfirmed);
-  }
-
-  mostrarExito1(titulo: string, mensaje: string) {
-    Swal.fire({
-      title: titulo,
-      text: mensaje,
-      icon: 'success',
-      confirmButtonText: 'Aceptar'
-    });
-  }
 }
 

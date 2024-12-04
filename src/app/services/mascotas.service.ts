@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { mascota } from "../mascota.models";
 import { ServicioMascotaService } from "./servicio-mascota.service";
 import { DataServices } from "./data.service";
-import { NgZone } from '@angular/core';
 import { AlertasService } from './alertas.service';
 
 
@@ -16,9 +15,10 @@ export class mascotasService{
 
   mascotas: mascota []=[];
 
-  constructor(private servicioMensaje: ServicioMascotaService, private dataService: DataServices, private zone: NgZone, private alertasService: AlertasService){}
+  constructor(private servicioMensaje: ServicioMascotaService, private dataService: DataServices, private alertasService: AlertasService){}
 
     agregar_mascota(mascota:mascota){
+
       this.mascotas.push(mascota);
       this.dataService.guardar_arreglo(this.mascotas);
       this.alertasService.mostrarExito('¡Éxito!', 'Mascota agregada correctamente');
@@ -32,7 +32,7 @@ export class mascotasService{
 
     actualizar_mascota(indice: number, mascota:mascota){
       this.alertasService
-      .mostrarConfirmacion1('¿Confirmar Actualización?', '¿Desea guardar los cambios?')
+      .mostrarConfirmacion('¿Confirmar Actualización?', '¿Desea guardar los cambios?')
       .then((confirmado) => {
         if (confirmado) {
       let mascotaModificado = this.mascotas[indice];
@@ -47,7 +47,7 @@ export class mascotasService{
        Object.assign(this.mascotas[indice], mascota);
       this.dataService.actualizar_posicion(indice, mascota);
 
-      this.alertasService.mostrarExito1('Actualización Exitosa', 'La mascota ha sido actualizada correctamente.');
+      this.alertasService.mostrarExito('Actualización Exitosa', 'La mascota ha sido actualizada correctamente.');
         }
       });
 
@@ -61,7 +61,7 @@ export class mascotasService{
       this.mascotas.splice(indice, 1);
       this.dataService.eliminar_posicion(indice);
       this.dataService.guardar_arreglo(this.mascotas);
-
+      this.alertasService.mostrarExito('Eliminacion Exitosa', 'La mascota ha sido eliminada correctamente.');
     }
   });
 

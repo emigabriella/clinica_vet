@@ -6,11 +6,12 @@ import { MascotaHCComponent } from '../mascota-h-c/mascota-h-c.component';
 import { FormsModule } from '@angular/forms';
 import { mascotasService } from '../../services/mascotas.service';
 import { LoginService } from '../login/login.service';
+import { PortadadComponent } from "../portadad/portadad.component";
 
 @Component({
   selector: 'app-datos-p-c',
   standalone: true,
-  imports: [CommonModule, FormsModule, MascotaHCComponent],
+  imports: [CommonModule, FormsModule, MascotaHCComponent, PortadadComponent],
   providers: [ServicioMascotaService, LoginService],
   templateUrl: './datos-p-c.component.html',
   styleUrl: './datos-p-c.component.css'
@@ -27,6 +28,8 @@ export class DatosPCComponent implements OnInit{
   cuadro_tipo_mascota : string = "";
   cuadro_edad : number = 0;
   cuadro_raza : string = "";
+i!: number;
+mascota!: mascota;
 
   constructor(private miServicio: ServicioMascotaService, private mascotasService: mascotasService){
     //this.mascotas = this.mascotasService.mascotas;

@@ -8,7 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
     providedIn: 'root'
 })
 export class LoginService{
-    token!: string;
+    tok!: string;
 
     constructor(private router: Router, private cookies: CookieService){}
 
@@ -18,9 +18,9 @@ export class LoginService{
             response =>{
                 firebase.auth().currentUser?.getIdToken()
                 .then(
-                    token =>{
-                        this.token = token;
-                        this.cookies.set('token', this.token);
+                    tok =>{
+                        this.tok = tok;
+                        this.cookies.set('tok', this.tok);
                         this.router.navigate(['/']);
                     }
                 )
@@ -33,21 +33,21 @@ export class LoginService{
 
     getIdToken(){
         //return this.token;
-        return this.cookies.get('token');
+        return this.cookies.get('tok');
     }
 
     estaLogueado(){
         //console.log(this.token);
         //return this.token;
-        return this.cookies.get('token');
+        return this.cookies.get('tok');
     }
 
     logout(){
         firebase.auth().signOut()
         .then(
             ()=>{
-                this.token = "";
-                this.cookies.set('token', this.token);
+                this.tok = "";
+                this.cookies.set('tok', this.tok);
                 //this.cookies.delete('token');
                 this.router.navigate(['/login']);
             }

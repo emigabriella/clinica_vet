@@ -7,11 +7,12 @@ import { MascotaHCComponent } from '../mascota-h-c/mascota-h-c.component';
 import { ServicioMascotaService } from '../../services/servicio-mascota.service';
 import { LoginService } from '../login/login.service';
 import { mascotasService } from '../../services/mascotas.service';
+import { PortadadComponent } from "../portadad/portadad.component";
 
 @Component({
   selector: 'app-registro-datos',
   standalone: true,
-  imports: [CommonModule, FormsModule, MascotaHCComponent],
+  imports: [CommonModule, FormsModule, MascotaHCComponent, PortadadComponent],
   providers: [ServicioMascotaService, LoginService],
   templateUrl: './registro-datos.component.html',
   styleUrl: './registro-datos.component.css'

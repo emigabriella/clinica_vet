@@ -1,2 +1,13 @@
-<app-mascota-h-c *ngFor="let mascota of mascotas; let i = index" [mascotaLista]="mascota" [indice]="i"></app-mascota-h-c>
+<app-portadad></app-portadad>
+<div class="container">
+  <!-- Usar el sistema de grid de Bootstrap para organizar las cards -->
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Iterar sobre cada mascota en el array 'mascotas' -->
+    <app-mascota-h-c
+      *ngFor="let mascota of mascotas; let i = index"
+      [mascotaLista]="mascota"
+      [indice]="i">
+    </app-mascota-h-c>
+  </div>
+</div>
 
