@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { LoginService } from './componentes/login/login.service';
 import { CommonModule } from '@angular/common';
 import firebase from 'firebase/compat/app';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
